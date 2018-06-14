@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Surf forecast">
+    <meta name="author" content="Xan Antón Fernández Pequeno">
+
+    <title>Na Onda - Spot</title>
+
+    <!-- CSS Bootstrap -->
+    <link href="bootstrap-4.1.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-white">
+        <div class="container text-center">
+            <h1>
+                <a href="/naonda/index.html">
+                    <img src="img/logo.png" alt="logo-naonda">
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li id="nav-home" class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li id="nav-forecast" class="nav-item">
+                    <a class="nav-link" href="#">Previsiones</a>
+                </li>
+                <li id="nav-historic" class="nav-item">
+                    <a class="nav-link" href="#">Historico</a>
+                </li>
+                <li id="nav-spot" class="nav-item">
+                    <a class="nav-link" href="#">Spot</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li id="nav-profile" class="nav-item">
+                    <a class="nav-link" href="#">Perfil</a>
+                </li>
+                <li id="nav-register" class="nav-item">
+                    <a class="nav-link" href="#">Registrar</a>
+                </li>
+                <li id="nav-login" class="nav-item">
+                    <a class="nav-link" href="#">Entrar</a>
+                </li>
+                <li id="nav-logout" class="nav-item">
+                    <a class="nav-link" href="#">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+
+    <!-- Spot -->
+    <form class="container" style="margin-top: 1em;">
+
+        <div class="form-row col form-group">
+            <label for="spot-name">Nombre</label>
+            <input type="type" class="form-control" id="spot-name">
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-region">Region</label>
+            <select class="form-control" id="spot-region">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-location">Ubicación</label>
+            <select class="form-control" id="spot-location">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-latitude">Latitud</label>
+            <input type="type" class="form-control" id="spot-latitude" placeholder="ejemplo: 42.15416667">
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-longitude">Longitud</label>
+            <input type="type" class="form-control" id="spot-longitude" placeholder="ejemplo: -8.8250000">
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-time">Época:</label>
+            <div class="form-check" id="spot-time"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-bottom">Tipo de fondo:</label>
+            <div class="form-check" id="spot-bottom"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-tide">Marea:</label>
+            <div class="form-check" id="spot-tide"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-water">Calidad del agua</label>
+            <select class="form-control" id="spot-water">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-wave-height">Tamaño de la ola:</label>
+            <div class="form-check" id="spot-wave-height"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-wave-length">Largo de la ola</label>
+            <select class="form-control" id="spot-wave-length">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-wave-direction">Dirección de la ola:</label>
+            <div class="form-check" id="spot-wave-direction"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-wave-description">Descripción de la ola:</label>
+            <div class="form-check" id="spot-wave-description"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-wind-direction">Dirección del viento:</label>
+            <div class="form-check" id="spot-wind-direction"></div>
+        </div>
+        <div class="form-row col form-group">
+            <label for="spot-swell-strength">Fuerza del swell</label>
+            <select class="form-control" id="spot-swell-strength">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+        <div class="form-row col form-group">
+            <label for="spot-swell-direction">Dirección del swell:</label>
+            <div class="form-check" id="spot-swell-direction"></div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-localism">Localismo:</label>
+            <select class="form-control" id="spot-localism">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-conflict">Conflictividad:</label>
+            <select class="form-control" id="spot-conflict">
+                <option value="0">Seleccionar...</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-services">Servicios:</label>
+            <div class="form-check" id="spot-services">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="shower">Ducha</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="parking">Parking</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="hostelry">Hostelería</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="life_guard">Socorrista</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="wc">WC</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="wifi">Wifi</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="bodyboard">Bodyboard</label>
+                </div>
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="van">Furgoneta</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-rating">Valoración:</label>
+            <select class="form-control" id="spot-rating">
+                <option value="0">Seleccionar...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div class="form-row col form-group">
+            <label for="spot-id-forecast">Identificador API metereológica</label>
+            <input type="type" class="form-control" id="spot-id-forecast">
+        </div>
+
+        <div class="form-row col form-group">
+            <div class="form-check" id="spot-active">
+                <input class="form-check-input" type="checkbox">Activo
+            </div>
+        </div>
+
+    </form>
+
+    <div class="container" style="margin-bottom: 1em;">
+        <button id="spot-save" class="btn btn-info btn-block">Guardar</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-3 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; naonda 2018</p>
+        </div>
+    </footer>
+
+    <!-- Script jQuery -->
+    <script src="jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+    <!-- Script Bootstrap -->
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.bundle.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="scripts/naonda.js" type="text/javascript"></script>
+    <script src="scripts/spot.js" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Surf forecast">
+    <meta name="author" content="Xan Antón Fernández Pequeno">
+
+    <title>Na Onda</title>
+
+    <!-- CSS Bootstrap -->
+    <link href="bootstrap-4.1.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- CSS Datatables -->
+    <link href="DataTables/datatables.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- CSS Font Awesome -->
+    <link href="fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+
+    <!-- Script Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEwBRe5fUub8oQrw86av2nzsIXlZEGlI8" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-white">
+        <div class="container text-center">
+            <h1>
+                <a href="/naonda/index.html">
+                    <img src="img/logo.png" alt="logo-naonda">
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li id="nav-home" class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li id="nav-forecast" class="nav-item">
+                    <a class="nav-link" href="#">Previsiones</a>
+                </li>
+                <li id="nav-historic" class="nav-item">
+                    <a class="nav-link" href="#">Historico</a>
+                </li>
+                <li id="nav-spot" class="nav-item">
+                    <a class="nav-link" href="#">Spot</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li id="nav-profile" class="nav-item">
+                    <a class="nav-link" href="#">Perfil</a>
+                </li>
+                <li id="nav-register" class="nav-item">
+                    <a class="nav-link" href="#">Registrar</a>
+                </li>
+                <li id="nav-login" class="nav-item">
+                    <a class="nav-link" href="#">Entrar</a>
+                </li>
+                <li id="nav-logout" class="nav-item">
+                    <a class="nav-link" href="#">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Spot selector -->
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <div class="container">
+            <div class="col-2">
+                <h3 class="text-light">Surfear en:</h3>
+            </div>
+            <div class="col-5">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="region">Provincia</label>
+                    </div>
+                    <select class="custom-select" id="region">
+                        <option selected>Seleccionar...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="spot">Playa</label>
+                    </div>
+                    <select class="custom-select" id="spot" disabled>
+                        <option selected>Seleccionar...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+
+    <!-- Spot Map -->
+    <div id="map" style="width:100%;height:400px;"></div>
+
+    <!-- Notification to user -->
+    <div id="alert-user" class="container alert alert-info alert-dismissible fade show" style="margin-top: 2em;" role="alert">
+        <span></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Spot List -->
+    <div class="container" style="margin-top: 1em; margin-bottom: 1em;">
+        <table id="table-spots" class="table table-striped table-bordered" width="100%"></table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-3 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; naonda 2018</p>
+        </div>
+    </footer>
+
+    <!-- Script jQuery -->
+    <script src="jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+    <!-- Script Bootstrap -->
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.bundle.js"></script>
+
+    <!-- Script Datatables -->
+    <script src="DataTables/datatables.min.js" type="text/javascript"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="scripts/naonda.js" type="text/javascript"></script>
+    <script src="scripts/index.js" type="text/javascript"></script>
+
+</body>
+
+</html>
