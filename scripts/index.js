@@ -52,6 +52,32 @@ $(document).ready(function () {
         }
     });
 
+    // Añadimos función de eliminar playa para el botón eliminar
+    deleteSpot = function (id) {
+        // Petición de eliminación de playa
+        $.ajax({
+            async: true,
+            url: "http://localhost/naonda/v1/spot/delete",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                authorization: getCookie("NAONDA-TOKEN")
+            },
+            processData: false,
+            data: '{"id": "' + id + '"}',
+            success: function (response) {
+                setCookie("NAONDA-MSG", "Playa eliminada.")
+                redirect("INDEX");
+            },
+            error: function (jqXHR, exception) {
+                // En caso de error mostramos una alerta al usuario
+                alert("Error al solicitar datos al servio: " + jqXHR.responseJSON.message +
+                    "\nPuede ser que la página no funcione correctamente." +
+                    "\nDisculpe las molestias.");
+            }
+        });
+    }
+
     // Obtenemos los valores necesarios para mostrar listado de playas en el Datatable
     if (getCookie("NAONDA-USER") == 1) {
 
@@ -104,36 +130,10 @@ $(document).ready(function () {
                         // Botón para eliminar la playa
                         {
                             title: "Eliminar", render: function (data) {
-                                return '<button value="' + data + '" class="del-spot btn btn-info btn-sm btn-block">Eliminar</button>';
+                                return '<button value="' + data + '" onclick="deleteSpot(' + data + ')" class="btn btn-info btn-sm btn-block">Eliminar</button>';
                             }
                         }
                     ]
-                });
-
-                // Añadimos listener para el botón de eliminar playa
-                $('.del-spot').click(function () {
-                    // Petición de eliminación de playa
-                    $.ajax({
-                        async: true,
-                        url: "http://localhost/naonda/v1/spot/delete",
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            authorization: getCookie("NAONDA-TOKEN")
-                        },
-                        processData: false,
-                        data: '{"id": "' + $(this).val() + '"}',
-                        success: function (response) {
-                            setCookie("NAONDA-MSG", "Playa eliminada.")
-                            redirect("INDEX");
-                        },
-                        error: function (jqXHR, exception) {
-                            // En caso de error mostramos una alerta al usuario
-                            alert("Error al solicitar datos al servio: " + jqXHR.responseJSON.message +
-                                "\nPuede ser que la página no funcione correctamente." +
-                                "\nDisculpe las molestias.");
-                        }
-                    });
                 });
             },
             error: function (jqXHR, exception) {
@@ -264,7 +264,7 @@ $(document).ready(function () {
                 }
             });
         }
-        
+
     });
 
     // Añadimos listener para combo playas
